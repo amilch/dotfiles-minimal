@@ -1,0 +1,11 @@
+[user]
+        name = Andreas Milch
+        email = mail@andreasmilch.de
+[github]
+        user = andreasmilch
+[core]
+        editor = vim
+        excludesfile = ~/.gitignore
+[push]
+        default = simple
+

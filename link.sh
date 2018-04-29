@@ -14,6 +14,7 @@ safe_link () {
 
 safe_link bashrc ~/.bashrc
 safe_link bash_aliases ~/.bash_aliases
+safe_link dircolors ~/.dircolors
 safe_link vimrc ~/.vimrc
 safe_link gitconfig ~/.gitconfig
 safe_link gitignore ~/.gitignore

@@ -9,6 +9,7 @@ sudo apt install -y neovim
 sudo apt install -y git
 sudo apt install -y python3
 sudo apt install -y python
+sudo apt install -y httpie
 
 if ! [ -x "$(command -v n)" ]; then
   curl -L https://git.io/n-install | bash -s -- -y

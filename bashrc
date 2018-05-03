@@ -53,7 +53,7 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   host="@\h"
 fi
 
-PS1='\[\e]2;\u@\h \w\a\]\[$GREY\]\u${host} \w\[$RESET\] > ' # Nicer prompt character: ❯
+PS1="\[\e]2;\u@\h \w\a\]\[$GREY\]\u$host \w\[$RESET\] > " # Nicer prompt character: ❯
 
 # Alias definitions
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases

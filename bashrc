@@ -59,13 +59,4 @@ PS1='\[\e]2;\u@\h \w\a\]\[$GREY\]\u${host} \w\[$RESET\] > ' # Nicer prompt chara
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 [ -f ~/.win_aliases ] && . ~/.win_aliases
 
-# ssh-agent configuration
-if [ -z "$(pgrep ssh-agent)" ]; then
-    rm -rf /tmp/ssh-*
-    eval $(ssh-agent -s) > /dev/null
-else
-    export SSH_AGENT_PID=$(pgrep ssh-agent)
-    export SSH_AUTH_SOCK=$(find /tmp/ssh-* -name agent.*)
-fi
-
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).

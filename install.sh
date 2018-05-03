@@ -16,7 +16,9 @@ if ! [ -x "$(command -v n)" ]; then
   set -i
   . ~/.bashrc
   set +i
+  n lts
 fi
 
 npm install -g gulp-cli
+npm install -g bower
 

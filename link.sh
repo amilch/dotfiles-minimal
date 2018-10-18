@@ -26,6 +26,9 @@ fi
 
 if grep -q Microsoft /proc/version; then
   safe_link win_aliases ~/.win_aliases
+  USERHOME="/mnt/c/Users/$(whoami)"
+  mv -vf ${USERHOME}/.hyper.js ${USERHOME}/.hyper.js.bak
+  cp -v hyper.js ${USERHOME}/.hyper.js
 fi
 
 cd "${BASEDIR}"

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "${BASEDIR}"
 
 safe_link () {
     # Makes a backup of the destination file, if it was no link
@@ -31,10 +32,9 @@ if grep -q Microsoft /proc/version; then
   cp -v hyper.js ${USERHOME}/.hyper.js
 fi
 
-cd "${BASEDIR}"
 git init
 git remote add origin git@github.com:andreasmilch/dotfiles-minimal.git
 git branch --set-upstream-to=origin/master master
 
 # tmux
-# safe_link ${BASEDIR}/tmux/.tmux.conf ~/.tmux.conf
+safe_link tmux/.tmux.conf ~/.tmux.conf

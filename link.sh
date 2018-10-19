@@ -27,11 +27,14 @@ fi
 
 if grep -q Microsoft /proc/version; then
   safe_link win_aliases ~/.win_aliases
-  USERHOME="/mnt/c/Users/$(whoami)"
-  mv -vf ${USERHOME}/AppData/Roaming/wsltty/config ${USERHOME}/AppData/Roaming/wsltty/config.bak
-  cp -v minttyconfig ${USERHOME}/AppData/Roaming/wsltty/config
-  # mv -vf ${USERHOME}/.hyper.js ${USERHOME}/.hyper.js.bak
-  # cp -v hyper.js ${USERHOME}/.hyper.js
+  cat << EOF
+
+  
+##############################################################
+Install color scheme for command prompt by runing one-dark.reg
+##############################################################
+
+EOF
 fi
 
 git init

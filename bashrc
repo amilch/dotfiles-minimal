@@ -55,6 +55,9 @@ fi
 
 PS1="\[\e]2;\u@\h \w\a\]\[$GREY\]\u$host \w\[$RESET\] > " # Nicer prompt character: ❯
 
+# Path
+export PATH="$PATH:~/bin"
+
 # Alias definitions
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 [ -f ~/.win_aliases ] && . ~/.win_aliases

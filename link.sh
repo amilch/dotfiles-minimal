@@ -28,8 +28,10 @@ fi
 if grep -q Microsoft /proc/version; then
   safe_link win_aliases ~/.win_aliases
   USERHOME="/mnt/c/Users/$(whoami)"
-  mv -vf ${USERHOME}/.hyper.js ${USERHOME}/.hyper.js.bak
-  cp -v hyper.js ${USERHOME}/.hyper.js
+  mv -vf ${USERHOME}/AppData/Roaming/wsltty/config ${USERHOME}/AppData/Roaming/wsltty/config.bak
+  cp -v minttyconfig ${USERHOME}/AppData/Roaming/wsltty/config
+  # mv -vf ${USERHOME}/.hyper.js ${USERHOME}/.hyper.js.bak
+  # cp -v hyper.js ${USERHOME}/.hyper.js
 fi
 
 git init
@@ -37,4 +39,13 @@ git remote add origin git@github.com:andreasmilch/dotfiles-minimal.git
 git branch --set-upstream-to=origin/master master
 
 # tmux
-safe_link tmux/.tmux.conf ~/.tmux.conf
+safe_link tmux.conf ~/.tmux.conf
+
+# binaries
+mkdir -p ~/bin
+ln -sfv bin/* ~/bin/
+
+# tldr
+curl https://raw.githubusercontent.com/raylee/tldr/master/tldr > ~/bin/tldr
+chmod +x ~/bin/tldr
+

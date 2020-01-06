@@ -9,12 +9,11 @@ case $- in
 esac
 
 # Basic exports
-export EDITOR="vim"
+export EDITOR="emacs"
 set LANG=en_GB.UTF-8
 set LC_ALL=en_GB.UTF-8
 
 # Color
-eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
@@ -34,13 +33,6 @@ shopt -s globstar      # the pattern "**" will match recursivly
 bind 'set completion-ignore-case on'
 bind 'set show-all-if-ambiguous on'
 
-# vi mode
-set -o vi
-bind -m vi-insert '"\e[A":history-search-backward'
-bind -m vi-insert '"\e[B":history-search-forward'
-# bind 'set show-mode-in-prompt on'
-# bind 'set vi-ins-mode-string "x"'
-
 # Prompt
 RESET="$(tput sgr0)"
 BLUE="$(tput setaf 4)"
@@ -50,16 +42,14 @@ RED="$(tput setaf 1)"
 YELLOW="$(tput setaf 3)"
 
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  host="@\h"
+  host="\u@\h "
 fi
 
-PS1="\[\e]2;\u@\h \w\a\]\[$GREY\]\u$host \w\[$RESET\] > " # Nicer prompt character: ❯
+PS1="\[$GREY\]$userhost\w\[$RESET\] \\$ "
 
 # Path
-export PATH="$PATH:~/bin"
+export PATH="$PATH:~/bin:~/.local/share/flutter/bin"
 
 # Alias definitions
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 [ -f ~/.win_aliases ] && . ~/.win_aliases
-
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).

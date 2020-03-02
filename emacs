@@ -122,41 +122,6 @@
   :ensure t
   :bind (("C-x o" . ace-window)))
 
-(use-package company
-  :ensure t
-  :diminish company-mode
-  :init
-  (setq company-idle-delay nil
-	company-tooltip-align-annotations t)
-  :hook (after-init . global-company-mode)
-  :bind
-  (:map prog-mode-map
-	("C-i" . company-indent-or-complete-common)
-	("C-M-i" . completion-at-point)))
-
-;; (use-package company-lsp
-;;   :ensure t
-;;   :defer)
-
-;; (use-package lsp-mode
-;;   :ensure t
-;;   :commands lsp
-;;   :hook ((before-save . lsp-format-buffer)
-;; 	 (before-save . lsp-organize-imports))
-;;   :bind (("C-c d" . lsp-describe-thing-at-point)
-;; 	 ("C-c e n" . flymake-goto-next-error)
-;; 	 ("C-c e p" . flymake-goto-prev-error)
-;; 	 ("C-c e r" . lsp-find-references)
-;; 	 ("C-c e R" . lsp-rename)
-;; 	 ("C-c e i" . lsp-find-implementation)
-;; 	 ("C-c e t" . lsp-find-type-definition)))
-
-(use-package flycheck
-  :ensure t
-  :diminish flycheck-mode
-  :config
-  (add-hook 'after-init-hook #'global-flycheck-mode))
-
 (use-package ztree
   :ensure t
   :defer t)
@@ -257,30 +222,6 @@
  :ensure t)
 
 (provide 'lang-php)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;; Dart + Flutter
-;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(use-package dart-mode
-  :ensure t
-  ;; :init
-  ;; (setq lsp-dart-analysis-sdk-dir "~/.local/share/flutter/bin/cache/dark-sdk/")
-  :custom
-  (dart-format-on-save t)
-  (dart-sdk-path "~/.local/share/flutter/bin/cache/dark-sdk/"))
-  ;; :hook ((dart-mode . lsp)))
-
-(use-package flutter
-  :ensure t
-  :after dart-mode
-  :custom
-  (flutter-sdk-path "~/.local/share/flutter/")
-  :bind
-  (:map dart-mode-map
-	("C-M-x" . #'flutter-run-or-hot-reload)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;

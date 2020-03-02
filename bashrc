@@ -19,6 +19,10 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
 # History settings
 HISTCONTROL=ignoreboth
 shopt -s histappend
@@ -45,11 +49,18 @@ if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   host="\u@\h "
 fi
 
-PS1="\[$GREY\]$userhost\w\[$RESET\] \\$ "
+PS1="\[$GREY\]$host\w\[$RESET\] \\$ "
 
 # Path
-export PATH="$PATH:~/bin:~/.local/share/flutter/bin"
+export PATH="/home/linuxbrew/.linuxbrew/bin:~/Apps/composer:~/Apps/n/bin:~/bin:~/.local/share/flutter/bin:$PATH"
 
 # Alias definitions
 [ -f ~/.bash_aliases ] && . ~/.bash_aliases
 [ -f ~/.win_aliases ] && . ~/.win_aliases
+
+# Node
+export PREFIX=$HOME/Apps/n
+export N_PREFIX=$HOME/Apps/n
+
+# bat (cat alternative)
+export BAT_PAGER=

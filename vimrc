@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
-Plug 'joshdick/onedark.vim'
-Plug 'itchyny/lightline.vim'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
+" Plug 'joshdick/onedark.vim'
+" Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'wincent/ferret'
@@ -11,14 +12,11 @@ Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind']}
 Plug 'airblade/vim-gitgutter'
 Plug 'jreybert/vimagit'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dart-lang/dart-vim-plugin'
 Plug 'junegunn/goyo.vim', {'on': 'Goyo'}
 Plug 'reedes/vim-pencil'
 Plug 'plasticboy/vim-markdown', {'for': 'markdown'}
-Plug 'skywind3000/asyncrun.vim'
 Plug 'lervag/vimtex'
-Plug 'dense-analysis/ale'
 call plug#end()
 
 set autoindent          " auto indenting
@@ -31,7 +29,9 @@ syntax on               " syntax highlighting
 filetype indent on      " activates indenting for files
 
 set number              " line numbers
-colorscheme onedark
+colorscheme onehalflight
+" let g:lightline = { 'colorscheme': 'onehalfdark' }
+set termguicolors       " True color support
 
 set hidden              " can open multiple buffers without saving
 set nobackup            " get rid of anoying ~file
@@ -92,8 +92,3 @@ let g:rg_command = '
 
 command! -bang -nargs=* F call fzf#vim#grep(g:rg_command .shellescape(<q-args>), 1, <bang>0)
 
-" True color support
-set termguicolors
-let g:lightline = {
-  \ 'colorscheme': 'onedark',
-  \ }

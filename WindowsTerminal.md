@@ -58,3 +58,34 @@
   "cursorColor": "#aaaaaa"
 },
 ```
+
+# Shortcuts
+
+| Shortcut                | Description                        |
+| ----------------------- | ---------------------------------- |
+| Win + Shift + S         | Screenshot                         |
+| Win + Strg + Left/Right | Switch Desktop                     |
+| Win + Strg + D          | Add Desktop                        |
+| Win + Strg + F4         | Close Desktop                      |
+| Hold titlebar and shake | Minimize all other windows         |
+| Win + Number            | Open pinned Application on Taskbar |
+
+# Other Settings
+
+## Zeitleiste deaktivieren
+
+- Datenschutz -> Aktivitätsverlauf
+  - Windows meine Aktivitäten auf diesem PC sammeln lassen -> Muss der Haken entfernt werden
+  - Kontoaktivitäten anzeigen -> Beim Benutzerkonto muss die Einstellung auf Aus stehen.]
+
+Quelle: https://www.deskmodder.de/wiki/index.php?title=Zeitleiste_Timeline_deaktivieren_aktivieren_Windows_10
+
+## Expose wsl2 server
+
+Run everything as admin
+
+Enable route: `netsh interface portproxy add v4tov4 listenport=3000 listenaddress=0.0.0.0 connectport=3000 connectaddress=172.18.96.43`
+
+Disable route: `netsh interface portproxy delete v4tov4 listenport=3000 listenaddress=0.0.0.0`
+
+Add inbound rule to Windows Firewall (Run `WF.msc`)

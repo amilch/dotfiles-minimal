@@ -29,7 +29,7 @@ syntax on               " syntax highlighting
 filetype indent on      " activates indenting for files
 
 set number              " line numbers
-colorscheme onehalflight
+colorscheme onehalfdark
 " let g:lightline = { 'colorscheme': 'onehalfdark' }
 set termguicolors       " True color support
 

@@ -51,7 +51,8 @@ bindkey -e
 
 source <(antibody init)
 antibody bundle zsh-users/zsh-autosuggestions
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=253'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=254'  # for light theme
 antibody bundle zsh-users/zsh-completions
 
 #######################
@@ -130,6 +131,7 @@ alias bat='bat --theme=OneHalfLight'
 [[ -a /usr/bin/nvim ]] && alias vim=nvim
 
 alias ssh-keygen="ssh-keygen -t rsa -b 4096"
+alias dev-server-php="sh -c 'php -S localhost:8000 & browser-sync start -f . -p localhost:8000 --no-notify & wait'"
 
 #######################
 #
